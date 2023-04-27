@@ -1,0 +1,40 @@
+﻿CONSIGNE
+
+	Lire 3 nombres entier A, B et C puis les afficher dans l’ordre décroissant.
+
+VARIABLES
+	
+	a est un entier.
+	b est un entier.
+	c est un entier.
+
+TRAITEMENT
+
+	ECRIRE "Veuillez entrer un premier nombre entier a : "
+	LIRE a.
+
+	ECRIRE "Veuillez entrer un second nombre entier b : "
+	LIRE b.
+
+	ECRIRE "Veuillez entrer un premier nombre entier c : "
+	LIRE c.
+
+	Si a < b ET a < c ET b < c :
+         ECRIRE "a = " , a , " b = " , b , " c = " , c;
+            
+    Sinon si b < a ET b < c ET a < c :
+         ECRIRE "b = " , b , " a = " , a , " c = " , c;
+            
+    Sinon si c < a ET c < b ET a < b :
+         ECRIRE "c = " , c , " a = " , a , " b = " , b;
+            
+    Sinon si a > b ET a > c ET b > c :
+         ECRIRE "c = " , c , " b = " , b , " a = " , a;
+            
+    Sinon si a < b ET a < c ET b > c :
+         ECRIRE "a = " , a , " c = " , c , " b = " , b;
+            
+    Sinon si a > b ET a > c ET b < c :
+         ECRIRE "b = " , b , " c = " , c , " a = " , a;
+
+FIN TRAITEMENT
