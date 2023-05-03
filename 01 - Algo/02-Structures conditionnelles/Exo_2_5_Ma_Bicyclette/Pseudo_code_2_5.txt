@@ -32,29 +32,40 @@ VARIABLES
 	tempsReparation est un booléen.
 	veloUtilisable est un booléen.
 	possessionLivre est un booléen.
-	disponibiliteLivre est un.
+	disponibiliteLivre est un booléen.
 
 TRAITEMENT
 	
-	Si meteo est beau :
-		ECRIRE "Faire une balade à bicyclette"
-	Sinon :
-		ECRIRE "Consacrer sa journée à la lecture"
+	ECRIRE "Est-ce qu'il fait beau aujourd'hui ?"
+	Si meteo est vrai :
+		ECRIRE "Est-ce que la bicyclette est en bon état ?"
+		Si vrai:
+			ECRIRE "Je peux faire une balade en bicyclette."
+		Sinon:
+			ECRIRE "Aller chez garagiste avant la balade."
+			ECRIRE "Est-ce que le vélo est réparable immédiatement ?"
+			Si vrai:
+				ECRIRE "Le vélo est utilisable."
+				ECRIRE "Je peux faire une balade en bicyclette."
+			Sinon:
+				ECRIRE "Renoncer à la balade en bicyclette."
+				ECRIRE "Aller à pied jusqu'à l'étang pour cueillir des joncs."
 
-	Si etatBicyclette est différent de parfait :
-		ECRIRE "Passer chez le garagiste"
-
-	Si tempsReparation est différent de immediat :
-		ECRIRE "Renoncer à la balade en bicyclette"
-
-	Si veloUtilisable est different de utilisable :
-		ECRIRE "Aller à pied jusqu'à l'étang pour cueillir les joncs"
-
-	Si possessionLivre est différent present :
-		ECRIRE "Emprunter le livre à la bibliothèque municipale"
-
-	Si disponibiliteLivre est different de disponible :
-		ECRIRE "Emprunter un roman policier"
+	Sinon:
+		ECRIRE "Consacrer sa journée à la lecture."
+		ECRIRE "Est-ce que le livre est en ma possession ?"
+		Si vrai:
+			ECRIRE "Je peux m'installer confortablement dans le canapé pour le lecture."
+		Sinon:
+			ECRIRE "Emprunter le livre à la bibliothèque."
+			ECRIRE "Est-ce que le livre est disponible à la bibliothèque ?"
+			Si vrai:
+				ECRIRE "Rentrer à la maison."
+				ECRIRE "S'installer confortablement dans le canapé pour le lecture."
+			Sinon:
+				ECRIRE "Emprunter un roman policier."
+				ECRIRE "Rentrer à la maison."
+				ECRIRE "S'installer confortablement dans le canapé pour le lecture."
 
 FIN TRAITEMENT
 		

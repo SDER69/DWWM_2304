@@ -15,10 +15,10 @@ TRAITEMENT
 	ECRIRE "Veuillez entrer un premier nombre b : "
 	LIRE b.
 
-	Si a>b :
-		ECRIRE a,b.
-	Sinon :
+	Si b < a :
 		ECRIRE b,a.
+	Sinon :
+		ECRIRE a,b.
 
 FIN TRAITEMENT
 

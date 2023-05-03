@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exo_2_3_Ma_Retraite", "Exo_
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exo_2_4_Tri_Nombres_++", "Exo_2_4_Tri_Nombres_++\Exo_2_4_Tri_Nombres_++.csproj", "{D328B75B-EF8F-4080-8E47-CFE61465F8FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exo_2_5_Ma_Bicyclette", "Exo_2_5_Ma_Bicyclette\Exo_2_5_Ma_Bicyclette.csproj", "{1F341951-B77D-4080-96AA-907F577602C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exo_2_5_Ma_Bicyclette", "Exo_2_5_Ma_Bicyclette\Exo_2_5_Ma_Bicyclette.csproj", "{1F341951-B77D-4080-96AA-907F577602C4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

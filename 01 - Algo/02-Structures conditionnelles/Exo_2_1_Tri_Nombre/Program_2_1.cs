@@ -12,13 +12,13 @@
             Console.WriteLine("Veuillez entrer un premier nombre b : ");
             b = int.Parse(Console.ReadLine());
 
-            if (a>b)
+            if (b < a)
             {
-                Console.WriteLine("a = "+a+" b = "+b);
+                Console.WriteLine(b + " - " + a);
             }
             else
             {
-                Console.WriteLine("b = " + b+ " a = " + a);
+                Console.WriteLine(a + " - " + b);
             }
 
 

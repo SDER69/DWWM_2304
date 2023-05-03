@@ -1,0 +1,28 @@
+﻿CONSIGNE
+
+	L’utilisateur est invité à saisir son prénom.
+
+	Le programme affiche ensuite “Bonjour” suivi du prénom saisi.
+
+	Le prénom doit contenir au moins 2 caractères.
+
+	Si le prénom contient moins de 2 caractères, l’utilisateur doit recommencer la saisie.
+
+	L’utilisateur dispose d’un nombre d’essai illimité.
+
+VARIABLES
+
+	nom est une chaine de caractères.
+
+TRAITEMENT
+	
+	FAIRE :
+		ECRIRE "Veuillez saisir votre prénom : "
+		LIRE nom.
+	Tant que la longueur du nom est inférieur à 2.
+
+	Si la longueur est égale ou supérieure à 2 :
+		ECRIRE "Bonjour",nom
+	Fin si
+
+FIN TRAITEMENT
