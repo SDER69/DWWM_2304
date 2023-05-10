@@ -11,7 +11,7 @@
 
 
             Console.WriteLine("Veuillez entrer une somme de départ : ");
-            sommeDepart = int.Parse(Console.ReadLine());
+            sommeDepart = Double.Parse(Console.ReadLine());
             
 
             do
