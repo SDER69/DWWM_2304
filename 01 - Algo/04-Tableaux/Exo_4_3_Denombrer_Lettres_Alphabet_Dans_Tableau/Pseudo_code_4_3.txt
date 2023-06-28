@@ -1,0 +1,40 @@
+﻿CONSIGNE
+
+	Lire un texte d’au moins 120 caractères (à contrôler).
+	Compter et afficher le nombre d’occurrences (d’apparitions) de chacune des lettres de l’alphabet.
+
+VARIABLES
+
+	texte est une chaine de caractères.
+	longueurTexte est un entier <-- 0
+	occurences est un entier <-- 0
+
+TRAITEMENT
+
+	Faire
+		ECRIRE "Veuillez saisir un texte d'au moins 120 caractères : "
+		LIRE texte.
+		longueurTexte <-- compter le nombre de caractères.
+		Si longueurTexte < 120
+			ECRIRE "Nombres de caractères saisis : ",longueurTexte
+			ECRIRE "Le texte ne comporte pas un minimum de 120 caractères."
+		Sinon
+			ECRIRE "Nombre de caractères saisis : ",longueurTexte
+			ECRIRE "Voici le décompte de toutes les occurences du texte pour chacune des lettres de l'alphabet :"
+	Tant que longueurTexte < 120
+	
+	texte <-- mettre texte en minuscules
+
+	Pour le caractère lettre = a, lettre <= z,incrémenter lettre
+		occurences = 0
+		Pour j=0, j < longueur du texte, incrémenter j
+			Si lettre est égale à texte indice j
+				Incrémenter occurences
+
+			ECRIRE "La lettre",lettre,"est présente",occurences,"fois"
+
+FIN TRAITEMENT
+
+
+			
+			

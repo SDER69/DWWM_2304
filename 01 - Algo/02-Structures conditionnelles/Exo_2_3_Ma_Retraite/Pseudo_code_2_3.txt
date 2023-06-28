@@ -18,7 +18,7 @@ TRAITEMENT
 	ECRIRE "Veuillez entrer un âge : "
 	LIRE age.
 
-	Si age <= 0 ou age > 120:
+	Si age <= 0 ou age > 150:
 		ECRIRE "La valeur fournie n'est pas un âge valide."
 	
 	Sinon si age < 60:

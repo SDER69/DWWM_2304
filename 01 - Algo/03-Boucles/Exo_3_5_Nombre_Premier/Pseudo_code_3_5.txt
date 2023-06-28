@@ -1,0 +1,24 @@
+﻿CONSIGNE
+
+	Lire un nombre N et déterminer s’il est un nombre premier.
+	Un nombre premier n’est divisible que par 1 et par lui-même.
+
+VARIABLES
+
+	n est un entier.
+	compteur est un entier.
+
+TRAITEMENT
+
+	ECRIRE "Veuillez saisir un nombre entier : "
+	Lire n.
+	Pour i = 1 et i <= n:
+		Si n modulo i = 0:
+			Incrémenter le compteur.
+	Si compteur = 2:
+		ECRIRE "Le nombre saisi est premier"
+	SINON
+		ECRIRE "Le nombre saisi n'est pas premier"
+	Fin si
+
+FIN TRAITEMENT
