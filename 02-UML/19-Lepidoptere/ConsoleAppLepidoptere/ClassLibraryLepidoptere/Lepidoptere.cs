@@ -20,7 +20,7 @@ namespace CL_Lepidoptere
 
         public void SeMetamorphoser()
         {
-            
+            this.stadeCourant = stadeCourant.SeMetamorphoser();
         }
     }
 }

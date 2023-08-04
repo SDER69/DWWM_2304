@@ -1,0 +1,24 @@
+﻿CONSIGNE
+
+	Lire 2 nombres entier A et B puis les afficher dans l’ordre croissant.
+
+VARIABLES
+
+	a est un entier.
+	b est un entier.
+
+TRAITEMENT
+
+	ECRIRE "Veuillez entrer un premier nombre a : "
+	LIRE a.
+
+	ECRIRE "Veuillez entrer un premier nombre b : "
+	LIRE b.
+
+	Si b < a :
+		ECRIRE b,a.
+	Sinon :
+		ECRIRE a,b.
+
+FIN TRAITEMENT
+

@@ -1,0 +1,19 @@
+﻿CONSIGNE
+
+	Lire un nombre entier et afficher tous ses diviseurs autres que 1 et lui-même.
+
+VARIABLES
+
+	a est un entier.
+
+TRAITEMENT
+
+	ECRIRE "Veuillez saisir un nombre entier : "
+	LIRE a.
+
+	Faire Pour i = 2;i < a
+		Si a modulo i == 0:
+		ECRIRE "i," ","
+	Fin si
+
+	FIN TRAITEMENT

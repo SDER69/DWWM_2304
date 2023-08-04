@@ -1,0 +1,21 @@
+﻿CONSIGNE
+
+	Exercice 6.3.1 : Calculer le nombre de jeunes
+	Il s’agit de dénombrer toutes les personnes d’âge strictement inférieur à 20 ans parmi un échantillon de 20 personnes.
+	L’utilisateur est invité à saisir les 20 valeurs.
+	Décrivez l’algorithme qui affiche le nombre de jeunes et codez la solution.
+
+	Exercice 6.3.2 : Afficher le nombre de personnes de chaque catégorie
+	Compléter l’algorithme précédent pour répondre à la demande suivante:
+		. Si toutes les personnes ont moins de 20 ans, affichez « TOUTES LES PERSONNES ONT MOINS DE 20 ANS ».
+		. Si aucune personne n’a moins de 20 ans, affichez « TOUTES LES PERSONNES ONT PLUS DE 20 ANS ».
+		. Sinon, affichez le nombre de personnes pour chaque catégorie (« - de 20, + de 20, = à 20).
+
+	Jeux d’essai:
+
+	Aucun jeune :
+		. 47 35 68 76 34 30 31 46 57 68 75 46 53 36 31 46 69 59 30 20
+	Pas de non-jeunes :
+		. 15 5 5 6 4 2 11 12 7 8 7 3 13 16 11 18 8 9 19 3
+	Des jeunes et des non-jeunes :
+		. 45 35 65 77 38 20 20 30 30 30 20 20 30 20 30 20 20 8 15 23

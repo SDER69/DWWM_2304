@@ -12,7 +12,12 @@ namespace CL_TestsConsoleLepidoptere
             p= new Lepidoptere();
             p.SeDeplacer();
             p.SeMetamorphoser();
-            
+            p.ToString();
+
+            p.SeDeplacer();
+            p.SeMetamorphoser();
+            p.ToString();
+
         }
     }
 }

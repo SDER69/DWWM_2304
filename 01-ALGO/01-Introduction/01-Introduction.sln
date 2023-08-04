@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exo_1_2_Hello_You", "Exo_1_2_Hello_You\Exo_1_2_Hello_You.csproj", "{65C6B1F9-1856-4E47-90DA-289A881180CA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exo_1_3_Calcul_Moyenne", "Exo_1_3_Calcul_Moyenne\Exo_1_3_Calcul_Moyenne.csproj", "{65A99061-A81C-49A9-8577-4027ABDF5357}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exo_1_4_Calcul_Aire_Volume_Sphère", "Exo_1_4_Calcul_Aire_Volume_Sphère\Exo_1_4_Calcul_Aire_Volume_Sphère.csproj", "{81E35429-64E1-447B-A305-830C0C2D0923}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exo_1_5_Calcul_Surface_Secteur_Circulaire", "Exo_1_5_Calcul_Surface_Secteur_Circulaire\Exo_1_5_Calcul_Surface_Secteur_Circulaire.csproj", "{CF4A5224-12AB-4266-8E29-1E599F347DC8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exo_1_6_Inversion_2_Valeurs", "Exo_1_6_Inversion_2_Valeurs\Exo_1_6_Inversion_2_Valeurs.csproj", "{04E03F70-C53E-4F1C-8187-C6E7B402B640}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exo_1_1_Hello_World", "Exo_1_1_Hello_World\Exo_1_1_Hello_World.csproj", "{EAC0D9CD-40FE-4FA8-A889-5FD5E97AA4B1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{65C6B1F9-1856-4E47-90DA-289A881180CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65C6B1F9-1856-4E47-90DA-289A881180CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65C6B1F9-1856-4E47-90DA-289A881180CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65C6B1F9-1856-4E47-90DA-289A881180CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65A99061-A81C-49A9-8577-4027ABDF5357}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65A99061-A81C-49A9-8577-4027ABDF5357}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65A99061-A81C-49A9-8577-4027ABDF5357}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65A99061-A81C-49A9-8577-4027ABDF5357}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81E35429-64E1-447B-A305-830C0C2D0923}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81E35429-64E1-447B-A305-830C0C2D0923}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81E35429-64E1-447B-A305-830C0C2D0923}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81E35429-64E1-447B-A305-830C0C2D0923}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF4A5224-12AB-4266-8E29-1E599F347DC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF4A5224-12AB-4266-8E29-1E599F347DC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF4A5224-12AB-4266-8E29-1E599F347DC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF4A5224-12AB-4266-8E29-1E599F347DC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04E03F70-C53E-4F1C-8187-C6E7B402B640}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04E03F70-C53E-4F1C-8187-C6E7B402B640}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04E03F70-C53E-4F1C-8187-C6E7B402B640}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04E03F70-C53E-4F1C-8187-C6E7B402B640}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAC0D9CD-40FE-4FA8-A889-5FD5E97AA4B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAC0D9CD-40FE-4FA8-A889-5FD5E97AA4B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAC0D9CD-40FE-4FA8-A889-5FD5E97AA4B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAC0D9CD-40FE-4FA8-A889-5FD5E97AA4B1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BF54545A-904D-46D2-9FA3-2090EF7021A5}
+	EndGlobalSection
+EndGlobal

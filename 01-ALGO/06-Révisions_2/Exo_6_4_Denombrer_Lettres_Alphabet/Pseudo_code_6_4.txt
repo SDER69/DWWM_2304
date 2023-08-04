@@ -1,0 +1,10 @@
+﻿CONSIGNE
+
+	Lire une chaine de caractères d’au moins 100 caractères (à contrôler).
+
+	Compter et afficher:
+
+		. le nombre de consonnes.
+		. le nombre de voyelles
+		. le nombre de chiffres
+		. la moyenne des chiffres, 0 si aucun chiffre.

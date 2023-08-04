@@ -1,0 +1,38 @@
+﻿CONSIGNE
+
+	1. Lire un nombre A correspondant à un âge (en années).
+	2. Selon l’âge fourni, le programme doit afficher l’un des messages suivants :
+		. Vous êtes à la retraite depuis X années
+		. Il vous reste X années avant la retraite.
+		. C’est le moment de prendre sa retraite.
+		. La valeur fournie n’est pas un âge valide.
+La retraite est fixée à 60 ans.
+
+VARIABLES
+
+	age est un entier.
+	nbAnnees est un entier
+
+TRAITEMENT
+
+	ECRIRE "Veuillez entrer un âge : "
+	LIRE age.
+
+	Si age <= 0 ou age > 150:
+		ECRIRE "La valeur fournie n'est pas un âge valide."
+	
+	Sinon si age < 60:
+		nbAnnees = 60 - age
+		ECRIRE "Il vous reste ",nbAnnees,"années avant la retraite."
+	
+	Sinon si age == 60:
+		ECRIRE "C'est le moment de prendre sa retraite."
+	
+	Sinon si age > 60:
+		nbAnnees = age - 60
+		ECRIRE "Vous êtes à la retraite depuis ",nbAnnees,"années."
+
+FIN TRAITEMENT
+
+		
+
