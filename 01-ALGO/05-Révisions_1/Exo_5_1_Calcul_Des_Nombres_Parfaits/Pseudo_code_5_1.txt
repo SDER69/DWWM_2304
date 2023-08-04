@@ -1,0 +1,36 @@
+﻿CONSIGNE
+
+	On souhaite écrire un programme de calcul des 4 premiers nombres parfaits.
+	Un nombre est dit parfait s’il est égal à la somme de ses diviseurs, 1 compris.
+	
+	Exemple :
+	6 = 1+2+3 
+	6 est un nombre parfait.  
+	L’algorithme retenu contiendra deux boucles imbriquées.
+	Une boucle de comptage des nombres parfaits qui s’arrêtera lorsque le décompte sera atteint,
+	la boucle interne ayant vocation à calculer tous les diviseurs du nombre examiné d’en faire la somme puis de tester l’égalité entre cette somme et le nombre.
+
+	Ecrivez le programme complet qui affiche les 4 premiers nombres parfaits.
+
+	Affichage des 4 premiers nombres parfaits :
+	6 est un nombre parfait.
+	28 est un nombre parfait.
+	496 est un nombre parfait.
+	8128 est un nombre parfait.
+
+VARIABLES
+
+	nbMax est un entier <-- 10000
+
+TRAITEMENT
+
+	Pour n = 1, n <= nbMax , incrémenter n:
+		sommeDiviseur est un entier <-- 0
+		Pour diviseur = 1, diviseur <= n/2, incrémenter diviseur:
+			Si n modulo diviseur = 0
+				sommeDiviseur <-- diviseur+1
+
+	Si sommeDiviseur = n
+		ECRIRE n,"est un nombre parfait"
+
+FIN TRAITEMENT

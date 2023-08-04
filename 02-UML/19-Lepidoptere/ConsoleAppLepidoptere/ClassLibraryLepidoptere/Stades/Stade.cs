@@ -5,6 +5,5 @@
         //Méthodes abstraites
         public abstract void SeDeplacer();
         public abstract Stade SeMetamorphoser();
-
     }
 }

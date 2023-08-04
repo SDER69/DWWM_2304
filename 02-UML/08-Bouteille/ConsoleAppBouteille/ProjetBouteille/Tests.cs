@@ -10,7 +10,7 @@ namespace ProjetBouteille
             Bouteille bouteilleSoda = new Bouteille(false, 1.5f, 0.5f, "soda");
             Bouteille bouteilleJus = new Bouteille(true,1f,0.5f,"jus");
 
-            bool ok1 = bouteilleSoda.Ouvrir();
+            //bool ok1 = bouteilleSoda.Ouvrir();
             bool ok2 = bouteilleJus.Fermer();
             //Console.WriteLine("ouvrir : "+ok1);  
             //Console.WriteLine("fermer : "+ok2);
@@ -21,7 +21,7 @@ namespace ProjetBouteille
             //bouteilleEau = new Bouteille(true, 1.5f, 0f, "eau");
             //Console.WriteLine(bouteilleEau.ToString());
             bool ouvrir1 = bouteilleSoda.Ouvrir();
-            ouvrir1 = bouteilleSoda.Ouvrir();
+            //ouvrir1 = bouteilleSoda.Ouvrir();
             Console.WriteLine("Bouteille de soda ouverte (ouvrir1) :" + ouvrir1);//false
             Console.WriteLine("Est ouverte : " + bouteilleSoda.Ouverte);//true
             
@@ -42,7 +42,7 @@ namespace ProjetBouteille
 
             Console.WriteLine("-------------------------------Tests des Méthodes Remplir() et Vider() une quantité déterminée------------------------------------------------");
 
-            bool remplir1 = bouteilleEau.Remplir(0.6f);
+            /*bool remplir1 = bouteilleEau.Remplir(0.6f);
             bool vider1 = bouteilleEau.Vider(0.3f);
             Console.WriteLine("Bouteille d'eau à remplir : " + remplir1.ToString());
             Console.WriteLine("Bouteille d'eau à vider : " + vider1.ToString());
