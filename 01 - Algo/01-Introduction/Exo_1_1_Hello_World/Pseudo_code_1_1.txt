@@ -1,9 +1,0 @@
-﻿Ecrire un programme qui affiche “Hello World !”.
-
-VARIABLES
-
-DEBUT TRAITEMENT 
-	
-	ECRIRE "Hello World !"
-
-FIN TRAITEMENT
