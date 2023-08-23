@@ -124,6 +124,8 @@ SELECT projet_ref,projet_date_fin_prevue,projet_date_fin_effective
 FROM projets
 WHERE projet_date_fin_effective > projet_date_fin_prevue;
 
+
+
 /* 5. Sélectionner la date de dépôt, la date de fin prévue, les superficies, le prix de tous les projets 
 avec le nom du client et le nom de l'architecte associés au projet */
 SELECT DISTINCT p.projet_date_depot,p.projet_date_fin_prevue,p.projet_superficie_totale,p.projet_superficie_batie,p.projet_prix,
@@ -133,12 +135,15 @@ INNER JOIN clients c ON p.adresse_id = c.adresse_id
 INNER JOIN employes e WHERE e.fonction_id = 1
 ORDER BY e.emp_nom;
 
+
+
 /* 6. Sélectionner tous les projets (dates, superficies, prix) avec le nombre d'intervenants autres que le client et l'architecte */
 SELECT p.projet_ref,count(e.emp_nom),p.projet_date_depot,p.projet_date_fin_prevue,p.projet_date_fin_effective,p.projet_superficie_totale,p.projet_superficie_batie,p.projet_prix
 FROM projets p
 INNER JOIN participer pa ON p.projet_ref = pa.projet_ref
 INNER JOIN employes e ON pa.emp_matricule = e.emp_matricule
 GROUP BY p.projet_ref,p.projet_date_depot,p.projet_date_fin_prevue,p.projet_date_fin_effective,p.projet_superficie_totale,p.projet_superficie_batie,p.projet_prix;
+
 
 
 /* 7. Sélectionner les types de projets avec, pour chacun d'entre eux, le nombre de projets associés et le prix moyen pratiqué */
@@ -152,11 +157,15 @@ inner JOIN type_projets tp ON p.type_projet_id = tp.type_projet_id
 GROUP BY p.type_projet_id
 ORDER BY p.type_projet_id ASC
 
+
+
 /* 8. Sélectionner les types de travaux avec, pour chacun d'entre eux, la superficie du projet la pls grande */
 SELECT tt.type_travaux_id,tt.type_travaux_libelle,max(p.projet_superficie_totale)
 FROM type_travaux tt
 INNER JOIN projets p ON p.type_travaux_id = tt.type_travaux_id
 GROUP BY  tt.type_travaux_id,tt.type_travaux_libelle
+
+
 
 /* 9. Sélectionner l'ensembles des projets (dates, prix) avec les informations du client (nom, telephone, adresse), le type de travaux et le type de projet. */
 SELECT p.projet_date_depot,p.projet_prix,c.client_nom,c.client_telephone,a.adresse_ville,tt.type_travaux_libelle,tp.type_projet_libelle
@@ -166,12 +175,149 @@ INNER JOIN type_travaux tt ON p.type_travaux_id = tt.type_travaux_id
 INNER JOIN type_projets tp ON p.type_projet_id = tp.type_projet_id
 INNER JOIN adresses a ON c.adresse_id = a.adresse_id
 
+
+
 /* 10. Sélectionner les projets dont l'adresse est identique au client associé */
 SELECT p.projet_ref,c.client_nom,p.adresse_id,a.adresse_code_postal
 FROM projets p
 INNER JOIN clients c ON p.client_ref = c.client_ref
 INNER JOIN adresses a ON c.adresse_id = a.adresse_id
-WHERE c.adresse_id = p.adresse_idclients
+WHERE c.adresse_id = p.adresse_id
 
+/*-------------------------------------------------------REQUETES PROCEDURES STOCKEES-------------------------------------------------------------*/
+
+/* 1. Quels sont les noms, prénoms,matricules des architectes parmi les employes ? */
+DELIMITER |
+CREATE PROCEDURE recherche_emp_archi()
+BEGIN 
+SELECT emp_matricule,emp_nom,emp_prenom 
+FROM employes
+JOIN fonctions ON fonctions.fonction_id = employes.fonction_id
+WHERE fonction_nom = 'architecte';
+END|
+DELIMITER ;
+
+/* Appel de la procédure */
+CALL recherche_emp_archi();
+
+
+
+/* 2. Renvoyer la liste des salariés pour une "fonction" donnée en paramétre. Stored procedure. */
+DELIMITER |
+CREATE PROCEDURE recherche_emp_par_fonction(IN p_fonction_nom VARCHAR(50))
+BEGIN
+SELECT employes.emp_nom, employes.emp_prenom, employes.emp_date_embauche
+FROM employes 
+JOIN fonctions ON fonctions.fonction_id= employes.fonction_id
+WHERE fonctions.fonction_nom=p_fonction_nom; 
+END|
+DELIMITER ;
+
+/* Appel de la procédure */
+SET @fonction_nom := 'dessinateur';
+CALL recherche_emp_par_fonction(@fonction_nom);
+
+
+
+/* 3. Renvoyer le nombre "effectif" en variable de sortie pour une fonction donnée en 
+paramètre */
+DELIMITER |
+CREATE PROCEDURE nb_effectif_par_fonction(IN p_nom_fonction VARCHAR(50), OUT p_nb_effectif INT)
+SELECT COUNT(employes.emp_matricule) INTO p_nb_effectif
+FROM employes
+JOIN fonctions ON employes.fonction_id = fonctions.fonction_id
+WHERE fonctions.fonction_nom = p_nom_fonction;
+END|
+DELIMITER ;
+
+/* Appel de la procédure */
+SET @nom_fonction := 'architecte';
+CALL nb_effectif_par_fonction(@nom_fonction,@nb_effectif);
+SELECT @nb_effectif;
+
+
+
+/* 4. Créer une procédure stockée qui affiche la liste des projets(projet_ref,projet_date_fin_prevue,projet_prix)
+pour un nom d'employe en entrée.
+Celui-ci sera un architecte. */
+
+/* 1ere méthode */
+DELIMITER |
+CREATE PROCEDURE liste_projets_par_employe(IN p_nom_employe VARCHAR(50) )
+BEGIN 
+SELECT projets.projet_ref,projets.projet_date_fin_prevue,projets.projet_prix
+FROM projets
+JOIN employes ON projets.emp_matricule = employes.emp_matricule
+WHERE  employes.emp_nom = p_nom_employe;
+END|
+DELIMITER ;
+
+/* Appel de la procédure */
+SET @nom_employe := 'Schieber';
+CALL liste_projets_par_employe(@nom_employe);
+
+
+/* 2eme méthode */
+DELIMITER |
+CREATE PROCEDURE afficher_liste_projet(IN p_nom_salarie VARCHAR(50)) 
+BEGIN
+SELECT fonctions.fonction_nom
+FROM fonctions
+JOIN employes ON fonctions.fonction_id= employes.fonction_id
+WHERE employes.emp_nom=p_nom_salarie;
+SELECT projets.projet_ref, projets.projet_date_fin_prevue,projets.projet_prix
+FROM projets
+JOIN employes ON projets.emp_matricule=employes.emp_matricule
+WHERE employes.emp_nom=p_nom_salarie; 
+END|
+DELIMITER ;
+
+/* Appel de la procédure */
+SET @nom_salarie='roussotte';
+CALL afficher_liste_projet(@nom_salarie);
+
+
+
+/* 5. Créer une procédure stockée qui prend le nom d'un salarié en entrée et qui renvoie son ancienneté en années dans une variable (out). */
+DELIMITER |
+CREATE PROCEDURE nb_annees_anciennete_employe(IN p_nom_employe VARCHAR(50), OUT p_nb_annees INT)
+BEGIN
+SELECT TIMESTAMPDIFF(YEAR,employes.emp_date_embauche,CURDATE()) INTO p_nb_annees
+FROM employes WHERE employes.emp_nom = p_nom_employe;
+END|
+DELIMITER ;
+
+/* Appel de la procédure */
+SET @nom_employe := 'desplanques';
+CALL nb_annees_anciennete_employe(@nom_employe,@nb_annees);
+SELECT @nb_annees;
+
+
+
+/* 6. Utilisation paramètre IN OUT.
+Créer une procédure qui prend en paramètre un id de projet (IN) qui récupére son prix projet et l'ajoute
+dans la variable (cumul) dans le paramètre IN OUT défini. */
+DELIMITER |
+CREATE PROCEDURE cumul_projets(IN p_projet_ref INT, INOUT p_prix_projet DECIMAL(10,2))
+BEGIN
+	SELECT p_prix_projet + projets.projet_prix INTO p_prix_projet
+	FROM projets WHERE projets.projet_ref = p_projet_ref;
+END |
+
+DELIMITER ;
+
+/* Appel de la procédure */
+SET @cumul = 0;
+
+CALL cumul_projets(1,@cumul);
+SELECT @cumul AS cumul_1;
+
+CALL cumul_projets(2,@cumul);
+SELECT @cumul AS cumul_2;
+
+CALL cumul_projets(3,@cumul);
+SELECT @cumul AS cumul_3;
+
+	
 
 
