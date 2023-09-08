@@ -1,0 +1,136 @@
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding: 0;
+}
+
+html{
+    font-size:62.5%;
+}
+
+body{
+    font-size: 1.6rem;
+    display:grid;
+    height:100vh;
+    width:100vw;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    "header header header header"
+    "nav section section section"
+}
+
+header{
+    grid-area: header;
+    font-size: xx-large;
+    color:white;
+    background-color:#CCCC33;
+    border: 3px solid white;
+}
+
+nav{
+    grid-area: nav;
+    font-size: xx-large;
+    color:white;
+    background-color: #CCCC33;
+    grid-row-start: 2;
+    grid-row-end: 8;
+    border: 3px solid white;
+}
+
+#section1{
+    grid-area: section1;
+    font-size: xx-large;
+    color:white;
+    background-color:#CCCC33;  
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    border: 3px solid white;
+}
+
+#section2{
+    grid-area: section2;
+    font-size: xx-large;
+    color:white;
+    background-color:#CCCC33;  
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 3;
+    grid-column-end: 5;
+    border: 3px solid white;
+}
+
+#section3{
+    grid-area: section3;
+    font-size: xx-large;
+    color:white;
+    background-color:#CCCC33;  
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    border: 3px solid white;
+}
+
+#section4{
+    grid-area: section4;
+    font-size: xx-large;
+    color:white;
+    background-color:#CCCC33;  
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 4;
+    grid-column-end: 5;
+    border: 3px solid white;
+}
+
+#section5{
+    grid-area: section5;
+    font-size: xx-large;
+    color:white;
+    background-color:#CCCC33;  
+    grid-row-start: 4;
+    grid-row-end: 5;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    border: 3px solid white;
+}
+
+
+#section6{
+    grid-area: section6;
+    font-size: xx-large;
+    color:white;
+    background-color:#CCCC33;  
+    grid-row-start: 4;
+    grid-row-end: 5;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    border: 3px solid white;
+}
+
+#section7{
+    grid-area: section7;
+    font-size: xx-large;
+    color:white;
+    background-color:#CCCC33;  
+    grid-row-start: 4;
+    grid-row-end: 5;
+    grid-column-start: 4;
+    grid-column-end: 5;
+    border: 3px solid white;
+}
+
+footer{
+    grid-area: footer;
+    font-size: xx-large;
+    color:white;
+    background-color:#CCCC33;  
+    grid-row-start: 5;
+    grid-row-end: 6;
+    grid-column-start: 2;
+    grid-column-end: 5;
+    border: 3px solid white;
+}
