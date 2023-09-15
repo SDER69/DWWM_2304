@@ -1,0 +1,378 @@
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    font-size:62.5%;
+}
+
+@font-face {
+    font-family: 'chanel';
+    src: url('../Fonts/channel-webfont.woff') format('woff');
+}
+
+
+body{
+    font-size:1.6rem;
+    background-image: url("../images/bg_motif.gif");
+    background-repeat: repeat;
+}
+
+header{   
+    width: 100%;
+    height: 80px;
+    position:fixed;
+    top:0px;
+    background-image: url("../images/header.png");
+    background-repeat: repeat;
+    border-bottom: 2px solid #fff;
+    z-index:1000;
+    font-family: "chanel";
+}
+
+nav ul{
+    list-style-type: none;
+}
+
+nav ul::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+nav a{
+    display: block;
+    text-decoration: none;
+    color: black;
+    border-bottom: 2px solid transparent;
+    padding: 10px 15px;
+}
+
+nav a:hover{
+    color:red;
+    border-bottom: 2px solid gold;
+}
+
+.sous{
+    display: none;
+    box-shadow: 0px 1px 2px #CCC;
+    position: absolute;
+    z-index: 1000;
+}
+
+nav > ul li:hover .sous{
+    display: block;
+}
+
+.sous li{
+    float: none;
+    width: 100%;
+    text-align: left;
+}
+
+.sous a{
+    padding: 10px;
+    border-bottom: 1px solid white;
+}
+.sous a:hover{
+    border-bottom: none;
+    background-color: rgba(0,0,0,0.2);
+}
+
+nav ul li{
+    width:25%;
+    text-align: center;
+    position:relative;
+}
+
+header nav>ul{
+    float: right;
+    display: flex;
+    align-items: center;
+    padding-top: 15px;
+    padding-right: 60px;
+
+} 
+header nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    /*text-align: center;*/
+}
+
+#logo{
+    position:fixed;
+    top:50px;
+    left:50px;
+}
+
+main{
+    width:68vw;
+    height: 110vh;/*ajustement image*/
+    margin-left:auto;
+    margin-right: auto;
+    background-color: rgba(255,255,255,0.1);
+    box-shadow: -10px 0px 4px rgba(0, 0, 0, 0.5), 10px 0px 4px rgba(0, 0, 0, 0.5);
+}
+
+#photo_raisin{
+    position: relative;
+    object-fit: contain;
+    height:auto;
+    margin-right: auto;
+    margin-left: auto;
+    top: 90px;
+    width:65vw;
+    margin:auto;
+    display: block; 
+    /*box-shadow: 15px 15px 15px 15px grey;*/
+}
+
+#photo_raisin img{
+    width: 100%;
+}
+
+h1{
+    background-color: white;
+    color: red;
+    text-align: center;
+}
+
+#produits{
+    display: flex;
+    flex-direction: row;
+    position:relative;
+    top:110px;
+    margin-left: 25%;
+    margin:0 auto;
+    border-top: 1px solid white;
+}
+
+h2{
+    font-family: 'chanel';
+    color: white;
+    font-size: 1em;
+    padding:15px 60px;
+    /*background-color: rgba(255,255,255,0.1);*/
+    
+}
+
+.article_1, .article_2,.article_3{
+    background-image: url("../Images/bg_g.png");
+    width:35%;
+    padding-bottom: 50px;
+    position: relative;
+}
+
+.boutons{
+    background-color: grey;
+    width:100px;
+    height:40px;
+    border:none;
+    color: white;
+    display: block;
+    margin:0 auto;
+    
+    
+}
+
+.article_1 p,.article_2 p,.article_3 p{
+   text-align: center;
+   padding-left: 35px;
+   padding-right: 35px;
+
+   margin-bottom: 10px;
+}
+
+.icones{
+    position: absolute;
+    top:10px;
+    right:15px;
+    width:30px
+}
+
+.boutons:hover{
+    color: #e94037;
+    background-color: rgba(0, 0, 0, 0.5);
+    transform: rotate(15deg) scale(1.5);
+  
+    transform-origin: 50% 50%;
+    transition-property: all;
+
+    transition-duration: 1500ms;
+    transition-timing-function:ease-out;
+
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    zoom: 120%;
+}
+
+#selection{
+    width: 69%;
+    margin: 0 auto;
+    /*margin-top: 10px;*/
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    gap: 8px;
+    padding-top: 10px;
+    width:68vw;
+    height: 45vh;
+    margin-left:auto;
+    margin-right: auto;
+    background-color: rgba(255,255,255,0.1);
+    box-shadow: -10px 0px 4px rgba(0, 0, 0, 0.5), 10px 0px 4px rgba(0, 0, 0, 0.5);
+    padding-left: 5px;
+    padding-right: 4px;
+    
+}
+
+.choix{
+    font-size: 0.8em;
+    list-style-image:url('../Images/liste.png');
+    font-size: 2rem;
+    color: #222222;
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+    padding-left: 3vw;
+    list-style-position: inside;
+    line-height: 2.5;
+    font-weight: bold;
+}
+/*.choix:nth-child(2n+1)
+{section:nth-child(2n+0)  enfants 2,4,6,...  si tu mets 2n+1, il cible les enfants 1,3,5,7,.... }
+   
+    color: #123456;
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+}*/
+
+
+aside ul{
+    margin:5%;
+    display: flex;
+    flex-direction: column;
+}
+
+#photo_selection{
+    grid-area: photo_selection;
+    grid-column-start: 2;
+    grid-row-start: 1;
+    height:400px; 
+    padding-top:0px;
+    padding-left: 10px;
+    background-color: rgba(255,255,255,0.1);
+   
+}
+
+aside{
+    background-color:  rgba(255,255,255,0.1);
+    height: 400px;
+}
+
+#photo_selection img{
+    border: 3px solid white;
+    display: block;
+    margin-top:20px;
+    float: left; 
+}
+
+#titre_selection{
+    text-align: center;
+}
+
+
+#titre{
+    font-family: 'chanel';
+    font-size:0.78em;
+    color:white;
+    float:right;
+    margin-top:10px;
+    margin-right: 15px;  
+  
+}
+
+#texte{
+  color:black;
+  text-align: justify;
+  font-weight:900;
+  display: block;
+  float:right;
+  width: 490px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.footer{
+    /*width: 100%;*/
+    height: 150px;
+    top:0px;
+    display: flex;
+    flex-direction: row;
+  
+    background-repeat: repeat;
+   /* border-bottom: 2px solid #fff;*/
+    z-index:1000;
+    font-family: "chanel";
+    margin:0 auto;
+   
+   
+    /*overflow: hidden;*/
+    
+}
+
+footer ul{
+    list-style-type: none;
+    justify-content: start;
+    padding-left: 40px;
+    align-items: center;
+   
+    position: relative;
+}
+
+footer ul::after{
+   content: "";
+    display: table;
+    clear: both;
+}
+
+footer a{
+    display: block;
+    text-decoration: none;
+    color: white;
+ 
+    padding: 10px 15px;
+    
+}
+
+footer a:hover{
+    color:red;
+    border-bottom: 2px solid gold;
+}
+
+footer{
+    display: flex;
+    flex-direction: row;
+    width: 68vw;
+    margin-left: auto;
+    margin-right: auto; 
+    background-image: url("../images/footer-bg.png");
+    background-size: cover;
+    box-shadow: -10px 0px 4px rgba(0, 0, 0, 0.5), 10px 0px 4px rgba(0, 0, 0, 0.5);
+}
+footer img{
+  
+   justify-content: flex-end;
+    bottom: 0;
+    right: 15px;
+}
+
+
+
+
+
+
+
+
+
+
