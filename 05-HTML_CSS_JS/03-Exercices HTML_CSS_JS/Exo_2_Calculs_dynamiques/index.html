@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr-fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exo_2_Calculs_dynamiques </title>
+    <link rel="stylesheet" href="CSS/style.css" />
+</head>
+
+<body>
+    <div id="container">
+
+        <p id="p1"> Quantité : </p>
+        <input type="number" id="affichage_quantite_1" min="0" max="1000000"  onchange=controleSaisieQuantite() />
+        <p id="p2"> Quantité : </p>
+        <input type="number" id="affichage_quantite_2" min="0" max="1000000" onchange=controleSaisieQuantite() />
+
+        <p id="p3"> Prix unitaire : </p>
+        <input type="number" id="affichage_pu_1" min="0.1" max="1000000" onchange=controleSaisiePu() />
+        <p id="p4"> Prix unitaire : </p>
+        <input type="number" id="affichage_pu_2" min="0.1" max="1000000" onchange=controleSaisiePu() />
+
+        <p id="p5"> Sous total 1 : </p>
+        <input type="number" id="ss_total_1" />
+        <p id="p6"> Sous total 2 : </p>
+        <input type="number" id="ss_total_2" />
+
+        <p id="p7"> </p>
+        <input type="text" id="total" />
+
+    </div>
+    <script src="JS/script.js"></script>
+</body>
+
+</html>
