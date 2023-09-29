@@ -104,83 +104,50 @@ document.getElementById('valider').addEventListener('click', function () {
     window.location.href = "accueil.html";
 })
 
-// difference en jours avec l'anniv
-
-/*function nbJoursAnniv(date) {
-    let dateForm = document.querySelector('#' + date).value;
-    let dateN = new Date(dateForm);
-    let dateDuJour = new Date();
-    let dateAnniv = new Date(dateDuJour.getFullYear(), dateN.getMonth(), dateN.getDate());
-
-    let diff = dateAnniv.getTime() - dateDuJour.getTime();
-    let diffDays = diff / (1000 * 24 * 3600);
-    diffDays = Math.trunc(diffDays);
-
-    if (diffDays < 0) {
-        dateAnniv = new Date((dateDuJour.getFullYear() + 1), dateN.getMonth(), dateN.getDate());
-        diff = dateAnniv.getTime() - dateDuJour.getTime();
-        diffDays = diff / (1000 * 24 * 3600);
-        diffDays = Math.round(diffDays);
-
+/*function nbJoursAnniv() {
+    let dateJour = new Date(); // récupérer la date du jour
+    console.log("dateJour : " + dateJour)
+    let annee = dateJour.getFullYear();
+    let dateAnni = new Date(document.querySelector("#date_naissance").value); // récupérer la date d'anni
+    console.log("dateAnni : " + dateAnni)
+    let diff = dateAnni.getTime() - dateJour.getTime();
+    //diff = Math.floor(diff / (1000 * 3600 * 24));
+    if (dateAnni.getFullYear() == dateJour.getFullYear()) {
+        //let diff = dateAnni.getTime() - dateJour.getTime();
+        diff = Math.floor(diff / (1000 * 3600 * 24));
+    }
+    else if (dateAnni.getFullYear() < dateJour.getFullYear()) {
+        dateJour = new Date()
+        dateAnni = dateAnni.setFullYear(dateJour.getFullYear())
+        console.log("dateAnni = ", dateAnni.getFullYear())
+        diff = dateAnni.getTime() - dateJour.getTime();
+        diff = Math.floor(diff / (1000 * 3600 * 24));
     }
 
-    console.log(diffDays);
-
-}
-
-/*function nbJoursAnniv(dateAnniv) {
-    dateAnniv = new Date(document.querySelector("#date_naissance").value);
-    let dateJour = new Date();
-    dateAnniv = new Date(dateJour.getFullYear(),dateAnniv.getMonth(),dateAnniv.getDate())
-    
-    let diffTemps = dateAnniv.getTime() - dateJour.getTime()
-    let diffJours = diffTemps / (1000 * 3600 *24)
-    diffJours = Math.trunc(diffJours)
-
-    if(diffJours < 0){
-        dateAnniv=new Date(dateJour.getFullYear()+1),dateAnniv.getMonth(),dateAnniv.getDate()
-        diffTemps = dateAnniv.getTime()-dateJour.getTime()
-        diffJours = diffTemps / (1000 * 3600 * 24)
-        diffJours = Math.round(diffJours)
-
-    }
-    console.log(diffJours)
+    console.log(Math.abs(diff))
+    return Math.abs(diff);
 }*/
 
-/*function diffdate(d1,d2){
-	var nbJours = d2.getTime() - d1.getTime();
-    if (nbJours < 0) {
-        let dateAnniv = new Date((dateDuJour.getFullYear() + 1), dateN.getMonth(), dateN.getDate());
-        
-        diffDays = nbJours / (1000 * 24 * 3600);
-        diffDays = Math.round(diffDays);
-
-    }
-	return Math.ceil(WNbJours/(1000*60*60*24));
-}*/
-
-/*var Date1 = new Date(2015,0,1);
-var Date2 = new Date(2011,0,1);
- 
-alert(diffdate(Date1,Date2) + ' jours');
-
-
-/*let date=document.querySelector("#date_naissance").value
-document.querySelector("#date_naissance").addEventListener("change", function () {
-    nbJoursAnniv(date);
+/*document.querySelector("#date_naissance").addEventListener("change", function () {
+    nbJoursAnniv();
 });*/
 
-var first = "23/09/2023";
-var second;
+function getCookie(name) {
+    const cookies = document.cookie.split('; ')
+    const value = cookies
+        .find(c => c.startsWith(name + "="))
+        ?.split('=')[1]
+    if (value === undefined) {
+        return null
+    } 
+    return decodeURIComponent(value)
+}
 
-var x = new Date(first);
-var y = new Date(second);
+document.querySelector("#date_naissance").addEventListener("change", function () {
+    console.log(getCookie("prenom"))
+    console.log(getCookie("nom"))
+});
 
-// seconds = milliseconds/1000
-// minutes = seconds/60
-// hours = minutes/60
-// Days = hours/24
 
-const diffInDays = Math.floor((x - y) / (1000 * 60 * 60 * 24));
-console.log(diffInDays);
+
 
