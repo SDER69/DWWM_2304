@@ -101,53 +101,139 @@ function valider(nom, valeur) {
 document.getElementById('valider').addEventListener('click', function () {
     valider('nom', document.getElementById('nom').value);
     valider('prenom', document.getElementById('prenom').value)
+    valider('date_naissance',document.getElementById('date_naissance').value)
+    valider('pseudo',document.getElementById('pseudo').value)
     window.location.href = "accueil.html";
 })
 
-/*function nbJoursAnniv() {
+// 1ère méthode //
+function nbJoursAnniv() {
     let dateJour = new Date(); // récupérer la date du jour
     console.log("dateJour : " + dateJour)
-    let annee = dateJour.getFullYear();
-    let dateAnni = new Date(document.querySelector("#date_naissance").value); // récupérer la date d'anni
-    console.log("dateAnni : " + dateAnni)
+    let annee =new Date()
+    annee = dateJour.getFullYear();
+    var dateAnni = new Date(document.querySelector("#date_naissance").value); // récupérer la date d'anni
+    console.log("dateAnni : " + dateAnni);
     let diff = dateAnni.getTime() - dateJour.getTime();
-    //diff = Math.floor(diff / (1000 * 3600 * 24));
-    if (dateAnni.getFullYear() == dateJour.getFullYear()) {
-        //let diff = dateAnni.getTime() - dateJour.getTime();
-        diff = Math.floor(diff / (1000 * 3600 * 24));
-    }
-    else if (dateAnni.getFullYear() < dateJour.getFullYear()) {
-        dateJour = new Date()
-        dateAnni = dateAnni.setFullYear(dateJour.getFullYear())
-        console.log("dateAnni = ", dateAnni.getFullYear())
+    diff = Math.ceil(diff / (1000 * 3600 * 24));
+
+    if(dateAnni.getFullYear() == dateJour.getFullYear() && dateAnni.getMonth() < dateJour.getMonth()){
+        dateJour = new Date();
+        let enCours = new Date()
+        enCours = dateAnni.setFullYear(dateJour.getFullYear()+1);
         diff = dateAnni.getTime() - dateJour.getTime();
-        diff = Math.floor(diff / (1000 * 3600 * 24));
+        diff = Math.ceil(diff / (1000 * 3600 * 24));
+        //diff = Math.abs(diff)
     }
 
-    console.log(Math.abs(diff))
-    return Math.abs(diff);
-}*/
+    // Traitement du mois d'octobre //
+    else if(dateAnni.getFullYear() == dateJour.getFullYear() && dateAnni.getMonth() == dateJour.getMonth()){ 
+        dateJour = new Date();
+        let enCours = new Date()
+        
+        if(dateAnni.getDate() < dateJour.getDate()){
+          //dateJour = new Date();
+          //let enCours = new Date()
+          enCours = dateAnni.setFullYear(dateJour.getFullYear()+1);
+          diff = dateAnni.getTime() - dateJour.getTime();
+          diff = Math.ceil(diff / (1000 * 3600 * 24));
 
-/*document.querySelector("#date_naissance").addEventListener("change", function () {
+        }
+        else{
+            //dateJour = new Date();
+            //let enCours = new Date()
+            //enCours = dateAnni.setFullYear(dateJour.getFullYear());
+            diff = dateAnni.getTime() - dateJour.getTime();
+            diff = Math.ceil(diff / (1000 * 3600 * 24));
+        } 
+    }
+
+    else if (dateAnni.getFullYear() == dateJour.getFullYear()) {
+        let diff = dateAnni.getTime() - dateJour.getTime();
+        diff = Math.ceil(diff / (1000 * 3600 * 24));
+        //diff = Math.abs(diff)
+    }
+
+    else if(dateAnni.getFullYear() < dateJour.getFullYear() && dateAnni.getMonth() == dateJour.getMonth() ) {
+        dateJour = new Date();
+        let enCours = new Date()
+        enCours = dateAnni.setFullYear(dateJour.getFullYear()+1);
+        //console.log("dateEnCours = "+ enCours.getFullYear());
+        diff = dateAnni.getTime() - dateJour.getTime();
+        diff = Math.ceil(diff / (1000 * 3600 * 24));
+        //diff = Math.abs(diff)
+    }
+
+    else{
+        dateJour = new Date();
+        let enCours = new Date()
+        enCours = dateAnni.setFullYear(dateJour.getFullYear());
+        diff = dateAnni.getTime() - dateJour.getTime();
+        diff = Math.ceil(diff / (1000 * 3600 * 24));
+
+    }
+    console.log (Math.abs(diff));
+    return Math.abs(diff);
+}
+
+document.querySelector("#date_naissance").addEventListener("change", function () {
     nbJoursAnniv();
+});
+
+// 2ème méthode  //
+/*function nbJoursAnniv(dateAnnivStr)
+{
+    var dateActuelle = new Date();
+    var tabDateAnniv = dateAnnivStr.split('/');
+    var jourAnniv = new Date(dateActuelle.getFullYear(), tabDateAnniv[1]-1,tabDateAnniv[0]);
+    
+    if (jourAnniv < dateActuelle)
+    {   
+        jourAnniv.setFullYear(dateActuelle.getFullYear()+1);
+        var diff = jourAnniv-dateActuelle;
+    }
+    else
+    {       
+        var diff =  jourAnniv-dateActuelle;
+    }
+    var retour = Math.floor(diff / (1000*60*60*24));
+    console.log(retour)
+    return retour;
+}
+    let dateAnniv = new Date()
+    let dateAnnee = new Date().getFullYear()
+    let dateMois = new Date().getMonth()
+    let dateJour = new Date().getDay()
+
+    dateAnniv = document.querySelector("#date_naissance").value
+
+    /*dateAnnee = dateAnniv.getFullYear()
+    dateMois = dateAnniv.getMonth()
+    dateJour = dateAnniv.getDay()
+    console.log("valeur dateAnniv :"+typeof(dateAnniv))
+    console.log("dateAnniv"+dateAnniv)
+    document.querySelector("#date_naissance").addEventListener("change", function () {
+    nbJoursAnniv(dateAnnee+dateMois+dateJour);
 });*/
+
 
 function getCookie(name) {
     const cookies = document.cookie.split('; ')
     const value = cookies
         .find(c => c.startsWith(name + "="))
-        ?.split('=')[1]
+        ?.split('=')[1];
+        console.log("valeur = "+value);
     if (value === undefined) {
-        return null
+        return null;
     } 
-    return decodeURIComponent(value)
+
+    return decodeURIComponent(value);
 }
 
 document.querySelector("#date_naissance").addEventListener("change", function () {
-    console.log(getCookie("prenom"))
     console.log(getCookie("nom"))
+    console.log(getCookie("prenom"))
 });
-
 
 
 
