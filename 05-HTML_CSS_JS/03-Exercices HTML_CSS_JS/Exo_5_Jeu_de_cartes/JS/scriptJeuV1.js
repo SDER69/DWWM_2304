@@ -45,7 +45,7 @@ function fillTable(tabData) {
         titleCell(headerRow, key);
     }
     let tBody = table.createTBody();
-    for (let i = 1; i < tabData.length; i++) {
+    for (let i = 0; i < tabData.length; i++) {
         var bodyRow = tBody.insertRow();
         // Fonction créer les cellules
          createCells(bodyRow,tabData[i])
