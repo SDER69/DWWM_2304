@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr-fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Ma date de naissance </title>
+    <link rel="stylesheet" href="../Exo_8_Pompe_a_essence/assets/css/style.css" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./assets/js/main.js" type="module"></script>
+</head>
+
+<body id="app">
+    <h1> Pompe à esence </h1>
+    <div>
+        <label> Prix du litre :  </label>
+        <input type="number" v-model="prixLitre">
+        
+    <p> Quantité : {{ quantite }}</p>
+    <p> A payer : {{ aPayer }}</p>
+    <p><button> Commencer la distribution</button></p>
+   
+</body>
+
+</html>

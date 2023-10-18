@@ -1,8 +1,15 @@
+//IMPORTATIONS
+
+import { MaDate } from "./MaDate.js";
+
+
 // ==============================VARIABLES=====================================
 /** @var {HTMLElement} inputDateNaissance champ de saisie de la date de naissance*/
 const inputDateNaissance = document.getElementById("dateNaissance")
 const btnCalculer = document.getElementById("calculer")
 const divResultatDate = document.getElementById("resultatDate")
+const divResultatIntervalle = document.getElementById("resultatIntervalle")
+
 
 // ==============================FONCTIONS=====================================
 /**
@@ -10,7 +17,7 @@ const divResultatDate = document.getElementById("resultatDate")
  * @param {Date} _date la date à évaluer
  * @returns {boolean} vrai si la date est dans le passé,faux sinon
  */
-function estDansLePasse(_date){
+/*function estDansLePasse(_date){
     if(!(_date instanceof Date)){
          throw new Error("La date fournie n'est pas valide.")
     }
@@ -28,7 +35,7 @@ console.log(estDansLePasse(maDate))*/
  * @param {Date} dateAEvaluer la date à évaluer
  * @returns {Number} l'intervalle en années entre la date du jour et la date fournie en paramètre 
  */
-function intervalleDates(dateAEvaluer){
+/*function intervalleDates(dateAEvaluer){
     if(!(dateAEvaluer instanceof Date)){
         throw new Error("La date fournie n'est pas valide.")
     }
@@ -36,15 +43,12 @@ function intervalleDates(dateAEvaluer){
     let dateAujourdhui = new Date()
 
     let diffDates = dateAujourdhui - dateAEvaluer
-    console.log(diffDates/1000*3600*24)
-
-
-   
-}
+    return parseInt(diffDates/(1000*3600*24*365))  
+}*/
 
 
 // ==============================EVENEMENTS=====================================
-btnCalculer.addEventListener("click", () => {
+/*btnCalculer.addEventListener("click", () => {
     
     let dateNaissance = new Date(inputDateNaissance.value)
 
@@ -53,9 +57,31 @@ btnCalculer.addEventListener("click", () => {
         divResultatDate.innerHTML += dateNaissance.toLocaleDateString("fr")
         divResultatDate.innerHTML += " à "
         divResultatDate.innerHTML += dateNaissance.toLocaleTimeString("fr")
-        intervalleDates(dateNaissance)
-
+        divResultatIntervalle.innerHTML = "Il s'est écoulé "
+                                        + intervalleDates(dateNaissance)
+                                        + " années depuis votre naissance."
     }else{
         divResultatDate.innerHTML = "Veuillez saisir une date dans le passé."
     }
-})
+})*/
+
+// ==============================EVENEMENTS APPEL CLASSE MADATE=====================================
+btnCalculer.addEventListener("click", () => {
+    
+    let dateNaissance = new Date(inputDateNaissance.value)
+    const maDate = new MaDate(dateNaissance)
+
+    if(maDate.estDansLePasse()){
+        divResultatDate.innerHTML = "Vous êtes né le "
+        divResultatDate.innerHTML += dateNaissance.toLocaleDateString("fr")
+        divResultatDate.innerHTML += " à "
+        divResultatDate.innerHTML += dateNaissance.toLocaleTimeString("fr")
+        divResultatIntervalle.innerHTML = "Il s'est écoulé "
+                                        + maDate.intervalleDates()
+                                        + " années depuis votre naissance."
+    }else{
+        divResultatDate.innerHTML = "Veuillez saisir une date dans le passé."
+    }
+
+});
+
