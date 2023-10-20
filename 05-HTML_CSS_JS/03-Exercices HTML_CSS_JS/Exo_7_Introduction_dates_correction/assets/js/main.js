@@ -1,6 +1,7 @@
 //IMPORTATIONS
 
 import { MaDate } from "./MaDate.js";
+import { Signe } from "./Signe.js";
 
 
 // ==============================VARIABLES=====================================
@@ -9,6 +10,7 @@ const inputDateNaissance = document.getElementById("dateNaissance")
 const btnCalculer = document.getElementById("calculer")
 const divResultatDate = document.getElementById("resultatDate")
 const divResultatIntervalle = document.getElementById("resultatIntervalle")
+const divResultatSigne = document.getElementById("resultatSigne")
 
 
 // ==============================FONCTIONS=====================================
@@ -69,7 +71,8 @@ console.log(estDansLePasse(maDate))*/
 btnCalculer.addEventListener("click", () => {
     
     let dateNaissance = new Date(inputDateNaissance.value)
-    const maDate = new MaDate(dateNaissance)
+    let maDate = new MaDate(dateNaissance)
+    let signe = new Signe(dateNaissance)
 
     if(maDate.estDansLePasse()){
         divResultatDate.innerHTML = "Vous êtes né le "
@@ -79,6 +82,8 @@ btnCalculer.addEventListener("click", () => {
         divResultatIntervalle.innerHTML = "Il s'est écoulé "
                                         + maDate.intervalleDates()
                                         + " années depuis votre naissance."
+        divResultatSigne.innerHTML      = "Votre signe astrologique : " + signe.calculerSigne(); 
+
     }else{
         divResultatDate.innerHTML = "Veuillez saisir une date dans le passé."
     }
