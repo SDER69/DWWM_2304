@@ -30,19 +30,26 @@
                 </tr>
             </thead>
             <tbody>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <tr v-for="card of cards">
+                    <td>{{ card.id }}</td>
+                    <td>{{ card.name }}</td>
+                    <td>{{ card.level }}</td>
+
+                    <td v-if="card.description">{{ card.description }}</td>
+                    <!--<td v-else-if=""></td>-->
+                    <td v-else>Pas de description</td>
+
+                    <td>{{ card.power }}</td>
+                    <td>{{ card.attack }}</td>
+                    <td>{{ card.armor }}</td>
+                    <td>{{ card.damage }}</td>
+                    <td>{{ card.mitigation }}</td>
+                    <td>{{ card.played }}</td>
+                    <td>{{ card.victory }}</td>
+                    <td>{{ card.defeat }}</td>
+                    <td>{{ card.draw }}</td>
+                    
+                </tr>
             </tbody>
 
 
