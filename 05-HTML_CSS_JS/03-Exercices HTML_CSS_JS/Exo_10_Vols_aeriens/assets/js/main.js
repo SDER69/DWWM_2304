@@ -35,9 +35,9 @@ const myApp = {
                 return 0;
             })
 
-            if(this.triAsc === false) {
+            /*if(this.triAsc === false) {
                 this.vols.reverse();
-            }
+            }*/
 
             this.triAsc = !this.triAsc;
         }
