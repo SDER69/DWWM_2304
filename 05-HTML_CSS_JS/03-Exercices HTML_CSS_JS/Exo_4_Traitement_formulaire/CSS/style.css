@@ -1,0 +1,69 @@
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding: 0;
+}
+
+html{
+    font-size:62.5%;
+}
+
+body{
+    font-size: 1.6rem;
+    background-color: bisque;
+}
+
+h1{
+    background-color: rgb(141, 153, 186);
+    color:white;
+    text-align: center;
+    border-radius: 50px 50px 0 0;
+    border:2px solid white;
+}
+
+#container{
+    display: block;
+    margin: auto;
+    margin-top: 20vh;
+    background-color: bisque;
+    width:40vw;
+    height:70vh;
+    box-shadow: -2px -3px 35px 2px rgba(20,16,16,0.75);
+    -webkit-box-shadow: -2px -3px 35px 2px rgba(20,16,16,0.75);
+    -moz-box-shadow: -2px -3px 35px 2px rgba(20,16,16,0.75);
+    border-radius: 50px;
+}
+
+h2,#texte_libre{
+    padding:2vh;
+}
+
+#texte{
+    margin-left: 2vh;
+}
+
+#nom,#prenom,#email,#date_naissance,#pseudo{
+    width: 25vh;
+    height:3vh;
+    margin:2vh;
+}
+
+ul,li,label{
+    margin-left: 1vh;
+}
+
+li{
+    list-style-type: none;
+}
+
+#prenom_email{
+    float: left;
+}
+
+#valider,#annuler{
+    padding:5px;
+    margin:3px
+}
+
+
+

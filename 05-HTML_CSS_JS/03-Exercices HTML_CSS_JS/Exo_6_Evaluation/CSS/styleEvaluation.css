@@ -1,0 +1,19 @@
+#formulaire {
+    width: 800px;
+    height: 220px;
+    border: solid blue 2px;
+    margin: auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#prenom,
+#age,
+#valider,
+#vider {
+    border: blue 1px solid;
+}
+
+span {
+    color: blue;
+    font-weight: bold;
+}

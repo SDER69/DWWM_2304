@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codes postaux</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./assets/js/main.js" type="module"></script>
+</head>
+<body id="app">
+    <h1>Recherche des villes par code postal</h1>
+        <div>
+            <label for="choix-code-postal">Code postal:</label>
+            <input list="codes postaux" id="choix-code-postal" name="choix-code-postal" />
+
+    <datalist id="choix-code-postal">
+        <option v-for="cp of cp" value=></option>
+    </datalist>
+            <button>Valider</button>
+        </div>
+        <div>
+           
+</body>
+</html>

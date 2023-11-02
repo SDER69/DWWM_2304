@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Traitement formulaire</title>
+    <link rel="stylesheet" href="CSS/style.css" />
+    <script src="JS/script.js" defer></script>
+</head>
+
+<body>
+    <div id="container">
+        <h1> EVALUATION COURS JAVASCRIPT </h1>
+        <h2> formulaire avec traitement Javascript </h2>
+        <p id="texte_libre"><label for="texte"> Texte libre </label></p>
+
+
+
+        <form action="page_inscription" method="post" name="formulaire" onsubmit="formok()" >
+            <textarea id="texte" name="texte_saisi" rows="5" cols="55"> texte libre
+            </textarea>
+            <ul>
+                <li>
+                    <label for="nom"> Nom utilisateur :</label>
+                    <input type="text" id="nom" name="nom_utilisateur" placeholder="ex:Dupont"  />
+                </li>
+                <li>
+                    <p id="prenom_email">
+                        <label for="prenom"> Prénom :</label>
+                        <input type="text" id="prenom" name="prenom_utilisateur" placeholder="ex:Michel"/>
+                </li>
+                <li>
+
+                    <label for="email"> Email :</label>
+                    <input type="email" id="email" name="email_utilisateur" />
+                    </p>
+                </li>
+                <li>
+                    <label for="date_naissance"> Date de naissance : </label>
+                    <input type="date" id="date_naissance" name="date_naissance" />
+                </li>
+                <li>
+                    <label for="pseudo"> Afficher votre pseudo : </label>
+                    <input type="text" id="pseudo" name="pseudo_utilisateur" />
+                </li>
+                <li>
+                    <input type="button" id="valider" value="Validation" disabled="disabled"  />
+                </li>
+                <li>
+                    <input type="reset" id="annuler" value="Annuler"  />
+                </li>
+
+        </form>
+    </div>
+
+
+</body>
+
+</html>

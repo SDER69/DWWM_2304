@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr-fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/styleEvaluation.css" />
+    <script src="JS/scriptEvaluation.js" defer></script>
+
+    <title> Exercice 2 : Majorite </title>
+</head>
+
+<body>
+    <form id="formulaire">
+        <h1> Saisissez un prénom et un âge </h1>
+        <label for="prenom"> Prénom : </label>
+        <input type="text" name="prenom" id="prenom" />
+        <label for="age"> Âge : </label>
+        <input type="number" name="age" id="age" min="1" max="150" />
+        <input type="button" value="Valider" id="valider"
+            onclick=validationBonjour();validationMajorite();validationRetraite() />
+        <input type="reset" value="Vider" id="vider" />
+
+        <p id="bonjour"> </p>
+        <p id="majorite"> </p>
+        <p id="retraite"> </p>
+    </form>
+</body>
+
+</html>

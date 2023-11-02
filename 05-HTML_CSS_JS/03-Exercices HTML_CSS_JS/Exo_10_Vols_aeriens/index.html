@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vols aeriens</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./assets/js/main.js" type="module"></script>
+
+</head>
+
+<body>
+    <div id="app">
+        <h1>Dataset/Flights</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th @click="trier" data-attribut="flight_id">Flight Id</th>
+                    <th @click="trier" data-attribut="start_city">Start City</th>
+                    <th @click="trier" data-attribut="arrival_city">Arrival City</th>
+                    <th @click="trier" data-attribut="start_time">Start Time</th>
+                    <th @click="trier" data-attribut="arrival_time">Arrival Time</th>
+                    <th @click="trier" data-attribut="flight_duration">Flight Duration</th>
+                    <th @click="trier" data-attribut="airline_name">Airline Name</th>
+                    <th @click="trier" data-attribut="plane_maker">Plane Maker</th>
+                    <th @click="trier" data-attribut="plane_ref">Plane Ref</th>
+                    <th @click="trier" data-attribut="plane_type">Plane Type</th>
+                    <th @click="trier" data-attribut="plane_capacity">Plane Capacity</th>
+                    <th @click="trier" data-attribut="seats_free">Seats Free</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr v-for="vol of vols">
+                    <td>{{ vol.flight_id }}</td>
+                    <td>{{ vol.start_city }}</td>
+                    <td>{{ vol.arrival_city }}</td>
+                    <td>{{ vol.start_time }}</td>
+                    <td>{{ vol.arrival_time }}</td>
+                    <td>{{ vol.flight_duration }}</td>
+                    <td>{{ vol.airline_name }}</td>
+                    <td>{{ vol.plane_maker }}</td>
+                    <td>{{ vol.plane_ref }}</td>
+                    <td>{{ vol.plane_type }}</td>
+                    <td>{{ vol.plane_capacity }}</td>
+                    <td>{{ vol.seats_free }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
