@@ -16,7 +16,5 @@ class Student
         let surname = this.fullname.split(" ")
         return surname[1]
     }
-    
-
 }
 export { Student }

@@ -10,20 +10,32 @@
 </head>
 <body>
     <div id="app">
+        
         <h1>Résultat de l'évaluation</h1>
+        <p>Ajouter une note</p>
+        <label for="nomPrenom">Nom Prénom:</label>
+        <input type="text" id="nomPrenom" name="nomPrenom" v-model="message"><br>
+        <label for="note">Note:</label>
+        <input type="text" id="note" name="note"><br>
+        <button @click="ajouterLigne()">Ajouter</button>
+
         <table>
             <thead>
                 <tr>
                     <th>Nom</th>
                     <th>Prénom</th>
                     <th>Note</th>
+                    <th>Obtenu</th>
                 </tr>
             </thead>
             <tbody>
                 <tr v-for="student of students">
                     <td>{{ student.nom }}</td>
                     <td>{{ student.prenom }}</td>
-                    <td>{{ student.grade }}</td> 
+                    <td>{{ student.grade }}</td>
+                    <td v-if="student.grade >=  noteEliminatoire">Oui</td>
+                    <td v-else>Non</td>
+                    <p>{{ message }}</p>
                 </tr>
                 
             </tbody>
@@ -34,6 +46,7 @@
         <li>Nombre d'étudiants : {{ nbStudents }}</li>
         <li>Moyenne de la classe : {{ avgClass }}</li>
         <li>Nombre d'étudiants au dessus de la moyenne : {{ underAvg }}</li>
+        <li>Note éliminatoire : {{  noteEliminatoire }}</li>
         
 
 

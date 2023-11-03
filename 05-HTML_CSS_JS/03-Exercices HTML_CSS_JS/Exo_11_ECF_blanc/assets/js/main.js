@@ -10,7 +10,10 @@ const app = {
     return {
       students: [],
       notes: [],
-      notesUnderAvg: []
+      notesUnderAvg: [],
+      noteEliminatoire: 12,
+      message:""
+
     }
   },
   async mounted() {
@@ -21,8 +24,10 @@ const app = {
       this.students.push(c)
 
     })
-   
-
+   //this.sortTab()
+   this.trier()
+   console.log(this.students)
+    
 
   },
   computed: {
@@ -50,25 +55,36 @@ const app = {
     
   },
   methods: {
+    //================TRI METHODE 1============================
+    /*sortTab(){
+      this.students.sort(function (a, b) {
+        return b.grade - a.grade;
+      })*/
+  
+    //================TRI METHODE 2============================
+  trier(){
+      this.students.sort((a, b) => {
+          if(a.grade > b.grade) {
+              return -1;
+          } 
+          if(a.grade < b.grade) {
+              return 1;
+          } 
+          return 0;
+      })
 
+      this.triAsc = !this.triAsc;
+  },
 
-    /*avgClass(){
-      for(const item of this.students){
-        //return(this.students[item]['grade']) -> avec le for in
-         //return(item.grade) // avec le for of
-         
-        
-        this.notes.push(item.grade)
-        
-       
-      }
-      return this.notes
-      
-     let total = this.notes.reduce((a,b) => a + b,0)
-     let avg = total/this.nbStudents().toFixed(2)
-     console.log(avg)
-     return avg
-    */
+  ajouterLigne(){
+    this.students.push(this.message)
+    
+    
+   
+}
+ 
   }
 }
+
+
 createApp(app).mount("#app")
