@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr-fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,36 +9,53 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./assets/js/main.js" type="module"></script>
 </head>
+
 <body>
     <div id="app">
+
         <h1>Résultat de l'évaluation</h1>
+        <div id="bordure">
+            <p>Ajouter une note</p>
+            <label for="nomPrenom">Nom Prénom:</label>
+            <input type="text" id="nomPrenom" name="nomPrenom" v-model="nomPrenom"><br>
+            <label for="note">Note:</label>
+            <input type="number" id="note" name="note" v-model="note"><br>
+            <button id="ajouter" @click="ajouterLigne()">Ajouter</button>
+        </div>
         <table>
             <thead>
                 <tr>
                     <th>Nom</th>
                     <th>Prénom</th>
                     <th>Note</th>
+                    <th>Obtenu</th>
                 </tr>
             </thead>
             <tbody>
                 <tr v-for="student of students">
                     <td>{{ student.nom }}</td>
                     <td>{{ student.prenom }}</td>
-                    <td>{{ student.grade }}</td> 
+                    <td>{{ student.grade }}</td>
+                    <td v-if="student.grade >=  noteEliminatoire">Oui</td>
+                    <td v-else>Non</td>
+
+
                 </tr>
-                
+
             </tbody>
 
 
         </table>
-
-        <li>Nombre d'étudiants : {{ nbStudents }}</li>
-        <li>Moyenne de la classe : {{ avgClass }}</li>
-        <li>Nombre d'étudiants au dessus de la moyenne : {{ underAvg }}</li>
-        
+        <div id="resultat">
+            <li>Nombre d'étudiants : {{ nbStudents }}</li>
+            <li>Moyenne de la classe : {{ avgClass }}</li>
+            <li>Nombre d'étudiants au dessus de la moyenne : {{ underAvg }}</li>
+            <li>Note éliminatoire : {{ noteEliminatoire }}</li>
+        </div>
 
 
     </div>
-    
+
 </body>
+
 </html>

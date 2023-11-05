@@ -7,3 +7,72 @@
     --color6: #C490D1;
 }
 
+body{
+    background-color: var(--color1);
+}
+
+h1{
+    color:var(--color3)
+}
+
+p,label{
+    color:var(--color3)
+}
+
+#note{
+    margin-left: 59px;
+}
+
+#ajouter{
+    color:var(--color3);
+    background-color:#374479;
+    margin:10px
+}
+
+input{
+    margin:5px;
+    color:var(--color2);
+    background-color: #374479;
+}
+
+table {
+    table-layout: fixed;
+    width:60%;
+    border-collapse: collapse;
+    border: 2px solid var(--color4);
+    color:var(--color2);
+    margin-top: 15px;
+}
+th{
+    border-collapse: collapse;
+    border: 2px solid var(--color4);
+
+}
+
+td{
+    border-collapse: collapse;
+    border: 2px solid var(--color4);
+}
+
+#resultat{
+    margin:15px;
+    color: var(--color3);
+}
+
+#app{
+    border:2px solid var(--color6);
+    width:40%;
+    padding: 15px;
+}
+
+#bordure{
+    border:1px dotted var(--color6);
+}
+
+
+
+
+
+
+
+

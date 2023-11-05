@@ -8,15 +8,30 @@ class Student
     }
 
     getName(){
-        let name = this.fullname.split(" ")
-        return name[0]
+        if (typeof this.fullname === 'string') {
+            let name = this.fullname.split(" ")
+            return name[0]
+            //const result = str.split(',');
+            //console.log(result);
+          } else {
+            // 👇️ this runs
+            return('The variable does NOT store a string');
+          }
+       
     }
 
     getSurname(){
-        let surname = this.fullname.split(" ")
-        return surname[1]
+        if (typeof this.fullname === 'string') {
+            let surname = this.fullname.split(" ")
+            return surname[1]
+            
+          } else {
+            
+            return('The variable does NOT store a string');
+          }
+       
     }
-    
-
 }
+   
+
 export { Student }
