@@ -1,0 +1,71 @@
+:root {
+    --base-1: #E9FFF9;
+    --base-2: #1D3354;
+    --base-3: #467599;
+    --base-4: #467599;
+    --base-5: #9ED8DB;
+    --base-6: #E9FFF9;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: var(--base-6);
+    color: var(--color2);
+}
+
+main {
+    width: 70%;
+    border: 1px solid var(--base-2);
+    padding: 10px;
+    width: 70%;
+    height: 70%;
+}
+
+h1 {
+    color: var(--base-2);
+}
+
+label {
+    display: inline-block;
+    width: 200px;
+    color:#1D3354;
+    margin-left: 15px;
+}
+
+#participants{
+    display: inline-flex;
+    color:var(--base-6);
+}
+
+#gagnant{
+    margin-left:5px;
+    
+    background-color: #1D3354;
+    
+}
+
+#nbParticipants{
+    background-color: #1D3354;
+}
+#choixPays{
+    display:inline-flex;
+    background-color: var(--base-5);
+    width: 18%;
+    border:1px solid var(--base-1)
+}
+
+table {
+    border:  var(--base-5);
+    border-collapse: collapse;
+    margin: 30px 10px;
+}
+
+th, td {
+    border: 2px solid var(--base-1);
+    padding:5px;
+    background-color: var(--base-5);
+    color:#1D3354
+}
+
+
+

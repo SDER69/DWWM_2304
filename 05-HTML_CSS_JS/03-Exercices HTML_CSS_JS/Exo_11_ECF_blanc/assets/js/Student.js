@@ -2,10 +2,19 @@ class Student
 {
     constructor(_studentFromJson)
     {
+      if(_studentFromJson !== undefined) {
         Object.assign(this,_studentFromJson)
         this.nom = this.getName()
         this.prenom = this.getSurname()
+        //this.setFullName(_studentFromJson.fullname)
+      }        
     }
+
+    /*setFullName(_fullname) {
+      this.fullname = _fullname;
+      this.nom = this.getName()
+      this.prenom = this.getSurname()
+    }*/
 
     getName(){
         if (typeof this.fullname === 'string') {
@@ -14,8 +23,8 @@ class Student
             //const result = str.split(',');
             //console.log(result);
           } else {
-            // 👇️ this runs
-            return('The variable does NOT store a string');
+            
+            return("La variable n'est pas une chaine de caractères");
           }
        
     }
@@ -27,7 +36,7 @@ class Student
             
           } else {
             
-            return('The variable does NOT store a string');
+            return("La variable n'est pas une chaine de caractères");
           }
        
     }

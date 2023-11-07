@@ -55,10 +55,11 @@ const app = {
       });
 
       // Retourne la moyenne des notes
-      return (sum / this.students.length).toFixed(2);
+      //return (sum / this.students.length).toFixed(2);
+      return (sum / this.nbStudents).toFixed(2);
     },
 
-    underAvg() {
+    aboveAvg() {
       this.notesUnderAvg = []
       for (const item of this.students) {
         if (item.grade > this.avgClass)
@@ -104,8 +105,7 @@ const app = {
     ajouterLigne() {
 
       let student = new Student()
-
-      student.fullname = this.nomPrenom
+      //student.setFullName(this.nomPrenom)
       student.grade = parseInt(this.note)
 
       //console.log(typeof(student.fullname));
@@ -118,6 +118,9 @@ const app = {
       student.prenom = student.prenom[1]
       if(student.prenom.length < 2)  {
         alert("Veuillez entrer un prénom d'une longueur minimum de 2 caractères!");
+      }
+      if(this.note < 0 || this.note > 20){
+        alert("Veuillez entrer une note comprise entre 0 et 20.")
       }
       else{
 

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr-fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Résultats</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./assets/js/main.js" type="module"></script>
+</head>
+
+<body>
+    <main id="app">
+        <h1>Résultat de la course</h1>
+        <div id="participants">
+            <p id="nbParticipants">{{ nbParticipants }} participants</p>
+            <p id="gagnant">Gagnant : {{ nomPrenomGagnant }} </p>
+        </div>
+        <div>
+            <h2>Filtrer</h2>
+        </div>
+
+
+        <div v-for="participant of pays" id="choixPays">
+            {{ checkedPays }}
+            <input type="checkbox" id="pays" :value="participant.pays" name="pays" v-model="checkedPays"/>
+            <label for="pays"> {{ participant.pays }}</label>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Pays</th>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Temps final</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="participant of participants">
+                    
+                    <td>{{ participant.pays }}</td>
+                    <td>{{ participant.nom }}</td>
+                    <td>{{ participant.prenom }}</td>
+                    <td>{{ participant.temps }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+
+</body>
+
+</html>
